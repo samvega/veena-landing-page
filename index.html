@@ -151,6 +151,58 @@
     margin-bottom: 52px;
   }
 
+  .hero-carousel {
+    position: relative;
+    max-width: 440px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-carousel-track {
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+  }
+
+  .hero-carousel-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    transition: opacity 0.5s ease;
+  }
+
+  .hero-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(245,240,232,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+    padding: 0;
+  }
+
+  .hero-carousel-dot.active {
+    background: var(--gold);
+  }
+
+  .hero-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
   .hero-img {
     display: block;
     max-width: 440px;
@@ -454,6 +506,26 @@
     white-space: nowrap;
   }
 
+  .discount-badge {
+    display: inline-block;
+    background: rgba(196,144,58,0.2);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .pricing-original {
+    font-size: 13px;
+    color: rgba(245,240,232,0.4);
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+
   .pricing-card img {
     width: 100%;
     max-width: 180px;
@@ -662,16 +734,42 @@
 <!-- HERO -->
 <section class="hero">
   <span class="hero-eyebrow">ॐ Mantra Songbook No.2</span>
-  <h1>90+ mantras, chords, Sanskrit &amp; mythology — <em>all in one book</em></h1>
+  <h1>90+ mantras, chords, Sanskrit &amp; Hindu Deities — <em>all in one book</em></h1>
   <p class="hero-sub">Everything you need to play, sing, and understand mantra. For guitar and harmonium. For every level.</p>
   <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384158404776" class="hero-btn">Get Your Copy — $69</a>
   <span class="hero-note">Ships from the US in 3–7 days · Free on orders over $100</span>
-  <img
-    src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=880"
-    alt="Mantra Songbook No.2 by VEENA"
-    class="hero-img"
-    loading="eager"
-  >
+  <div class="hero-carousel">
+    <div class="hero-carousel-track" id="heroCarousel">
+      <div class="hero-carousel-slide">
+        <img src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=880" alt="Mantra Songbook with PDF" loading="eager">
+      </div>
+      <div class="hero-carousel-slide">
+        <img src="https://veenamusic.com/cdn/shop/files/Double-book.jpg?v=1775507631&width=880" alt="2 Books Bundle" loading="eager">
+      </div>
+      <div class="hero-carousel-slide">
+        <img src="https://veenamusic.com/cdn/shop/files/Book-_-PDF.jpg?v=1775507631&width=880" alt="Book with PDFs" loading="eager">
+      </div>
+    </div>
+    <div class="hero-carousel-dots">
+      <button class="hero-carousel-dot active" onclick="heroCarouselGo(0)"></button>
+      <button class="hero-carousel-dot" onclick="heroCarouselGo(1)"></button>
+      <button class="hero-carousel-dot" onclick="heroCarouselGo(2)"></button>
+    </div>
+  </div>
+
+  <script>
+    let heroCarouselIndex = 0;
+    function heroCarouselGo(n) {
+      const carousel = document.getElementById('heroCarousel');
+      const dots = document.querySelectorAll('.hero-carousel-dot');
+      heroCarouselIndex = n;
+      carousel.style.transform = `translateX(-${heroCarouselIndex * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === heroCarouselIndex));
+    }
+    setInterval(() => {
+      heroCarouselGo((heroCarouselIndex + 1) % 3);
+    }, 4000);
+  </script>
 </section>
 
 
@@ -807,8 +905,9 @@
 
       <div class="pricing-card">
         <img src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=320" alt="Mantra Songbook — single book" loading="lazy">
+        <div class="discount-badge">42% OFF</div>
         <p class="pricing-name">Printed Book + PDF</p>
-        <p class="pricing-price">$76</p>
+        <p class="pricing-price">$76 <span class="pricing-original">$132</span></p>
         <p class="pricing-desc">Printed book plus Medicine Music PDF — practice anywhere, anytime.</p>
         <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384164401320" class="btn-outline">Order Now</a>
       </div>
@@ -816,16 +915,18 @@
       <div class="pricing-card best">
         <span class="best-badge">Best value</span>
         <img src="https://veenamusic.com/cdn/shop/files/Double-book.jpg?v=1775507631&width=320" alt="Mantra Songbook — two book bundle" loading="lazy">
+        <div class="discount-badge">45% OFF</div>
         <p class="pricing-name">2 Books + 2 PDFs</p>
-        <p class="pricing-price">$124</p>
+        <p class="pricing-price">$125 <span class="pricing-original">$228</span></p>
         <p class="pricing-desc">Two printed books plus two digital PDF songbooks. Free shipping included.</p>
         <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384164368552" class="btn-gold">Order Bundle</a>
       </div>
 
       <div class="pricing-card">
         <img src="https://veenamusic.com/cdn/shop/files/Book-_-PDF.jpg?v=1775507631&width=320" alt="Mantra Songbook — book and ebook" loading="lazy">
+        <div class="discount-badge">37% OFF</div>
         <p class="pricing-name">Book + 2 PDFs</p>
-        <p class="pricing-price">$89</p>
+        <p class="pricing-price">$70 <span class="pricing-original">$111</span></p>
         <p class="pricing-desc">One printed book plus two digital PDF songbooks for extended learning.</p>
         <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384164401320" class="btn-outline">Order Now</a>
       </div>
