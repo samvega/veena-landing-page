@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mantra Songbook — VEENA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #0e0c0b;
+    --dark2: #1c1917;
+    --cream: #f5f0e8;
+    --cream-light: #faf8f5;
+    --gold: #c4903a;
+    --gold-hover: #b07f30;
+    --gold-bg: rgba(196,144,58,0.1);
+    --white: #fff;
+    --text-dark: #1a1714;
+    --text-muted: #6b6560;
+    --border: #e4ddd5;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- HEADER ---- */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(14,12,11,0.96);
+    backdrop-filter: blur(10px);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .header-logo svg {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  .header-cta {
+    background: var(--gold);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 10px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .header-cta:hover { background: var(--gold-hover); }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--dark);
+    padding: 120px 28px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(196,144,58,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--cream);
+    max-width: 700px;
+    margin: 0 auto 18px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(245,240,232,0.65);
+    max-width: 520px;
+    margin: 0 auto 38px;
+    line-height: 1.75;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 17px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+    margin-bottom: 12px;
+  }
+  .hero-btn:hover { background: var(--gold-hover); }
+
+  .hero-note {
+    display: block;
+    font-size: 12px;
+    color: rgba(245,240,232,0.35);
+    margin-bottom: 52px;
+  }
+
+  .hero-img {
+    display: block;
+    max-width: 440px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+  }
+
+  /* ---- STATS BAR ---- */
+  .stats-bar {
+    background: var(--dark2);
+    padding: 32px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    display: block;
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1.2;
+  }
+
+  .stat-lbl {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245,240,232,0.4);
+    margin-top: 5px;
+  }
+
+  /* ---- SHARED SECTION STYLES ---- */
+  .wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 80px 28px;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-h {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+
+  .section-p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 540px;
+    margin-bottom: 48px;
+  }
+
+  /* ---- REVIEWS ---- */
+  .reviews-wrap { background: var(--cream-light); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 22px;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .review-body {
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+  }
+
+  .review-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .review-source {
+    font-size: 12px;
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  /* ---- FEATURES ---- */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .feat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--gold-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .feat-text {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.5;
+    padding-top: 9px;
+  }
+
+  /* ---- CAROUSEL ---- */
+  .gallery-section {
+    background: var(--dark);
+    padding: 80px 28px;
+  }
+
+  .gallery-head {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 500;
+    color: var(--cream);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .carousel-outer {
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .carousel-viewport {
+    overflow: hidden;
+    border-radius: 6px;
+    line-height: 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+  }
+
+  .carousel-img {
+    min-width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14,12,11,0.72);
+    color: rgba(245,240,232,0.9);
+    border: 1px solid rgba(255,255,255,0.15);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 2;
+    padding: 0;
+  }
+  .carousel-btn:hover { background: rgba(196,144,58,0.85); border-color: var(--gold); }
+
+  .carousel-prev { left: -22px; }
+  .carousel-next { right: -22px; }
+
+  @media (max-width: 640px) {
+    .carousel-prev { left: 8px; }
+    .carousel-next { right: 8px; }
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .c-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.22);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .c-dot.active {
+    background: var(--gold);
+    transform: scale(1.25);
+  }
+
+  /* ---- PRICING ---- */
+  .pricing-section {
+    background: var(--dark2);
+    padding: 80px 28px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .pricing-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .pricing-h {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 48px;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .pricing-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 8px;
+    padding: 28px 22px;
+    position: relative;
+    text-align: center;
+  }
+
+  .pricing-card.best {
+    border-color: var(--gold);
+    background: rgba(196,144,58,0.07);
+  }
+
+  .best-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .pricing-card img {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-name {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .pricing-price {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .pricing-desc {
+    font-size: 13px;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 22px;
+    line-height: 1.65;
+  }
+
+  .btn-gold {
+    display: block;
+    background: var(--gold);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-hover); }
+
+  .btn-outline {
+    display: block;
+    background: transparent;
+    color: rgba(245,240,232,0.75);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.4);
+    color: var(--cream);
+  }
+
+  .pricing-footer {
+    font-size: 12px;
+    color: rgba(245,240,232,0.3);
+    margin-top: 24px;
+  }
+
+  /* ---- LONG TESTIMONIALS ---- */
+  .long-testi {
+    border-left: 3px solid var(--gold);
+    background: var(--white);
+    padding: 22px 26px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+  }
+
+  .long-testi p {
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.85;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+
+  .testi-meta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+  }
+
+  /* ---- WHO IT'S FOR ---- */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin-top: 48px;
+  }
+
+  .audience-card {
+    background: var(--cream-light);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .audience-icon { font-size: 28px; display: block; margin-bottom: 12px; }
+
+  .audience-h {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .audience-p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ---- FINAL CTA ---- */
+  .final-section {
+    background: var(--gold);
+    padding: 80px 28px;
+    text-align: center;
+  }
+
+  .final-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .final-section p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    max-width: 480px;
+    margin: 0 auto 34px;
+    line-height: 1.75;
+  }
+
+  .btn-white {
+    display: inline-block;
+    background: #fff;
+    color: var(--gold);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 17px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .btn-white:hover { opacity: 0.9; }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    background: var(--dark);
+    padding: 36px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .site-footer p {
+    font-size: 13px;
+    color: rgba(245,240,232,0.3);
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(245,240,232,0.45);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    .hero { padding: 100px 20px 60px; }
+    .wrap { padding: 60px 20px; }
+    .stats-bar { gap: 28px; }
+    .gallery-section { padding: 60px 20px; }
+    .pricing-section { padding: 60px 20px; }
+    .final-section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header class="site-header">
+  <a href="https://veenamusic.com" class="header-logo" aria-label="VEENA Music">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 497.96 106" style="height:28px;width:auto;display:block;"><g fill="#bc924a" stroke="#bc924a" stroke-miterlimit="10" stroke-width="2.95"><path d="M65.18,76.98l19.3-56.02c2.81-7.87-1.87-11.05-8.99-11.05h-.75v-3.75h30.35v3.75h-.75c-7.12,0-12.74,2.62-15.74,11.05l-27.35,78.88h-10.3L14.78,20.02c-3.19-6.93-6.75-10.12-13.12-10.12h-.19v-3.75h42.34v3.75h-.19c-5.25,0-7.12,3.18-5.06,7.87l26.61,59.21Z"/><path d="M185.46,71.92c-6.93,19.3-25.48,29.79-41.59,29.79-57.33,0-60.52-97.43,1.31-97.43,20.61,0,39.72,8.43,39.91,27.17h-63.33c-4.31,22.67,7.68,53.59,37.47,53.59,9.56,0,18.74-4.68,24.17-14.05l2.06.94ZM163.73,27.7c-.94-11.43-5.25-19.67-18.36-19.67-11.99,0-19.67,8.43-22.86,19.67h41.22Z"/><path d="M283.64,17.77h-.94v-3.75c6.37,0,22.86,0,33.35-12.55h1.87v22.67c10.87-11.43,22.67-19.86,37.1-19.86,20.24,0,27.17,17.61,27.17,35.04v44.22c.19,7.5,5.25,12.55,12.74,12.55h.19v3.75h-47.96v-3.75h.19c7.49,0,12.55-5.06,12.55-12.55v-44.03c0-10.3-2.81-22.86-16.3-22.86-39.53,0-56.02,85.06-106.24,85.06-57.33,0-60.52-97.43,1.31-97.43,20.61,0,39.72,8.43,39.91,27.17h-63.52c-4.31,22.67,8.06,53.59,37.66,53.59,27.17,0,42.91-31.85,42.91-53.21,0-7.68-2.81-14.05-11.99-14.05ZM257.22,27.7c-.94-11.43-5.25-19.67-18.36-19.67-11.99,0-19.67,8.43-22.86,19.67h41.22ZM282.89,96.09h.19c7.49,0,12.37-5.06,12.37-12.55v-18.55c4.12-5.06,8.99-15.36,15.36-15.36,4.68,0,7.12,3,7.12,7.68v26.23c.19,7.5,5.25,12.55,12.74,12.55h.19v3.75h-47.96v-3.75Z"/><path d="M461.26,81.1c-8.99,6.37-18.92,20.8-35.22,20.8-14.24,0-24.73-9.93-24.73-24.17,0-36.54,59.96-13.68,59.96-47.78,0-14.05-8.62-20.05-16.68-20.05-7.49,0-14.43,4.87-14.43,13.12,0,5.25,2.81,11.43,11.8,17.05-3.56,3.37-8.43,4.87-13.12,4.87-8.43,0-16.49-5.06-16.49-13.86,0-14.8,24.92-26.79,41.78-26.79s29.98,7.31,30.17,25.29c.19,23.23-21.36,22.11-37.66,24.17-12.37,1.5-23.05,3.37-23.05,15.55,0,9.18,5.43,15.36,15.18,15.36,22.3-.19,26.23-16.49,38.97-16.49,2.62,0,6,1.12,6,6.56v1.69c0,7.12,4.68,11.8,11.8,11.8h.94v3.75c-6.37,0-22.86,0-33.35,12.55h-1.87v-23.42Z"/></g></svg>
+  </a>
+  <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384158404776" class="header-cta">Get the Book — $69</a>
+</header>
+
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">ॐ Mantra Songbook No.2</span>
+  <h1>90+ mantras, chords, Sanskrit &amp; mythology — <em>all in one book</em></h1>
+  <p class="hero-sub">Everything you need to play, sing, and understand mantra. For guitar and harmonium. For every level.</p>
+  <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384158404776" class="hero-btn">Get Your Copy — $69</a>
+  <span class="hero-note">Shipsafrom the US in 3–7 days · Free on orders over $100</span>
+  <img
+    src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=880"
+    alt="Mantra Songbook No.2 by VEENA"
+    class="hero-img"
+    loading="eager"
+  >
+</section>
+
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">90+</span>
+    <span class="stat-lbl">Mantras</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">280</span>
+    <span class="stat-lbl">Pages</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">5★</span>
+    <span class="stat-lbl">Google rated</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">All</span>
+    <span class="stat-lbl">Skill levels</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">🇺🇸 🇬🇧</span>
+    <span class="stat-lbl">Shipsafrom US &amp; UK</span>
+  </div>
+</div>
+
+
+<!-- EARLY REVIEWS -->
+<div class="reviews-wrap">
+  <div class="wrap">
+    <span class="eyebrow">What customers say</span>
+    <h2 class="section-h">Real people. Real practice.</h2>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">"The details of Josh's mantra books are impressive. You can truly feel the intention and heart poured into every page. It's simple to read and a great tool to learn. 10/10!"</p>
+        <span class="review-name">Sunshine</span><span class="review-source"> · Google Review</span>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">"I literally am in love with this book. It is a definitive, beautifully crafted and heartfelt guide to Bhakti practice — a true treasure to return to with the heart, again and again."</p>
+        <span class="review-name">Giovanni</span><span class="review-source"> · Google Review</span>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-body">"I just received my Mantra Songbook and I have to tell you how happy I am with it. What a wonderful resource. It will be so helpful for me in my sound healing journey."</p>
+        <span class="review-name">Janice Biniok</span><span class="review-source"> · Verified purchase</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- FEATURES: WHAT'S INSIDE -->
+<div style="background: var(--white);">
+  <div class="wrap">
+    <span class="eyebrow">What's inside</span>
+    <h2 class="section-h">More than a songbook</h2>
+    <p class="section-p">Every mantra comes with everything you need — not just the words, but the music, the meaning, and the context.</p>
+
+    <div class="features-grid">
+      <div class="feat">
+        <div class="feat-icon">🎵</div>
+        <span class="feat-text">Chords &amp; lyrics for guitar and harmonium</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🕉</div>
+        <span class="feat-text">Sanskrit in IAST with translations &amp; pronunciation</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📱</div>
+        <span class="feat-text">QR codes linked to original recordings</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎶</div>
+        <span class="feat-text">Spotify &amp; YouTube playlists for every song</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📚</div>
+        <span class="feat-text">Mythology &amp; deity teachings for 10 deities</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎸</div>
+        <span class="feat-text">Music toolkit: chord charts, scales, circle of 5ths</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎨</div>
+        <span class="feat-text">Colour-coded chapters for easy navigation</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📖</div>
+        <span class="feat-text">Introduction to mantra, bhakti, kirtan &amp; Sanskrit</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- GALLERY: CAROUSEL -->
+<div class="gallery-section">
+  <h2 class="gallery-head">Take a look inside</h2>
+
+  <div class="carousel-outer">
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="carouselTrack">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Page-1.jpg?v=1775497951&width=560" alt="Mantra Songbook — sample page" loading="lazy">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Page-3.jpg?v=1775498122&width=560" alt="Mantra Songbook — sample page" loading="lazy">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Page-4.jpg?v=1775498254&width=560" alt="Mantra Songbook — sample page" loading="lazy">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Page-5.jpg?v=1775498672&width=560" alt="Mantra Songbook — sample page" loading="lazy">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Page-6.jpg?v=1775498717&width=560" alt="Mantra Songbook — sample page" loading="lazy">
+        <img class="carousel-img" src="https://veenamusic.com/cdn/shop/files/Mantra-Songbook---preview_Page_001_42c5af7b-07e3-4988-9bd5-812656eb9e96.jpg?v=1775497418&width=560" alt="Mantra Songbook — contents page" loading="lazy">
+      </div>
+    </div>
+    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous image">&#8249;</button>
+    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next image">&#8250;</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</div>
+
+
+<!-- PRICING / BUNDLES -->
+<div class="pricing-section">
+  <div class="pricing-inner">
+    <span class="eyebrow" style="display:block; text-align:center; margin-bottom:12px;">Choose your edition</span>
+    <h2 class="pricing-h">Get the book</h2>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <img src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=320" alt="Mantra Songbook — single book" loading="lazy">
+        <p class="pricing-name">Printed Book</p>
+        <p class="pricing-price">.18,586-16.3-22.8e book<c-4.3+85 .75h42.34v3.sn class="stath7files �ricingext-align:center; margin-bm2,0,elNe06-16.49-13u<p clas>M
+feat"usel-btn carousel-next" id="carous?vari,0,elNe0                                                                                                                                                                                                                                                                  ngle book" loading="lazy">
+        <p class="pricing-name">Printed Book</p>
+        <p class="prici : 50%;
+    background: var(--gold-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrin.96 106" style="height:x;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrin.96 106" style="height:x;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrin.96 106" style="height:x;
+    align-items: center;
+
+
+
+
+   te: 17px;
+    flex-shrin.....9rici : 50%;
+    background: var(--gold-bg);
+    display: flex;
+    align-items: center;
+    justify-content: cen.96 106" con3     eK"ource. It wilaria-label="N6" con3     eK"ource. It wilaria-label="o.2 by VEENA"
+    class="hero-img"
+    loading="eager"
+  >
+</section>
+
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">90+</span>
+    <span class="stat-lbl">Mantras</span>
+  </div>
+  <div class="stat">
+    <span cla28px;
+  ted Book</p>
+        <p class="pricing-price">.18,586-16.3-22.8e book<c-4.3+85 .75h42.34v3.sn class="stath7files �ricingext-align:center; margin-bm2,0,elNe06-16.49-13u<p clas>M
+feat"usel-btn carousel-next" id="carous?vari,0,elNe0                            l            re pag8ethe c>Rn c2lign:center; margin-bm2,0,elNe06-16.49-13u<p clas>M
+feat"usel-btn carousel-next" id="carous?vari,0,elNe0                            l            re pag8ethe c>Rn c2lign:center; margin-bm2,0,elNe06-16.49-13u<p clas>M
+feat"usel-btn carousel-next" id="carous?va,,,,,,u
+    an>
+  �ricingbabel="N6" con3     eK"ource. It wilarian
+    <sp next"      in415840471-S   .497hei,el
+i                            ="feat-icon">🎵</div>
+        <span class="feat-text">Chords &amp; lyrics for guitar and harmonium</span>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🕉</div>
+        <span class="feat-text">Sanskrit in IAST with translations &amar(--white);"helNe06-L<div class="wei,      oC 10pxa-lv classazy">
+      </div>
+    </div>
+           oC 10pxa-an>
+or gding="lazy">
+   dc>Rn t">
+    <spancdn/shop/fi,1ga i   </y �e inte  </divo : centet"     in">🕉</div>
+        <span class="feat-tadia="staeyn>< d=rls A margin-blasso�              ielTrack">
+       4ys/span>
+ ="stat">@   eK".86,20"
+      </dianni</span><srin.96 106" ece"  <div elNe06-16.49-13u<p r: rgba(24in.96 106" ecesa00;
+"1Tel-btn/div>
++rt">@   eK".86,20  <div elNe06-16.49-13u<p r: rgba(24in.96 s��<">@   n>
+     ntra"reviuat-twC"u"              5 class=sie7-8.43,4.87-13d: vaoclassbelrAygok-priiiiiii6.49-13u<p r: rgba(24in.96 sa-( v claeK"ource. It  claMtra- e: 17px;
+    flex-shr   backgross=sie7-8.43,4.87-13d: vaoclassbC4
+Sysa-( v cln/span>
+    <h2 class="section-h">More than a songbook</h2>
+    <p class="section-p">Every mantra comes with everything you need — not just the words, but the music, the meaning, and the context.</p>
+
+    <div class="features-grid">
+      <div class="feat">lazy"ge6he mut       <span class="feat-text">ets/mantman>section- im�B a      <diing: 17p     <in[  �ricingbabel="N6" con3     eK"oug"rgba(lass="stat-lblg. Ajicingbabel="NN6" cl chanudth:auto;display:block     -    transition: background 0.2s;
+  }
+  .header-'i a`n:bloAchanudth:auto;display:block     -    transition: background 0.2s;
+  }
+  .header-'i a`n:bloAchanudth:auto;display:block     -    transition: background 0.2s;
+  }
+  .header-'i a`n:bloAchanudth:auto;display:block     -    transition: background 0.2s;
+  }
+  .heannl;
+ be playlists f0;
+    padding: a>     ry-div c 0068756&width=880"
+    alt="Mantra So   btd 0.    flex-shrin.96 106" style="height   gition: background 0.2s;
+  }
+  .header-'i a`n:bloAchanudth:auto;dis>
+        <spamantne=th:aen/div>ub<div clase <div class="feat">
+        <div class="feat-icon">🕉</div>
+        <span class="feat-text">Sanskrit in IAST with translations &amar(--white);"helNe06-L<div class="wei,      oC 10pxa-lv classazy">
+      </div>
+    </div>
+           oC 10pxa-an>
+or gding="l>">🕉lmcae&#82feat-icon">🕉</div>
+        <span clasrnskrit iKY    6lt="Mantra Sonage" loap fle(/di    /diu>
+ darousel-outer">
+    <disrt inbgarlNe0l               ygFop cl )                                                                              ngle book" loading="lazy">
+        <p class="pricing-name">Printed Book</p>
+        <p class="prici : 50%;
+    background: var(--gold-bg);
+    display: flex;
+    align-items: cente-1.j="carB0PONSIVE ---- */
+  @media (max-widte loading="lazy">
+        <p clas o       oCn caraus   PONeEt,8.43,39999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999498254&wiI999999999999999999999999999999999999999999999999999999999999498254&wiI999999999999999999999999999999999999999999999999999999999999498254&wiI999999999999999999999999999999999999999999999999999999999999498254&wiI9999999999999999999999999999999999999999999999992o  <dir254&wiIo)e08w l  <sk   999amuhl; margi r.8-35.22,20.8-1eergin-bm2d99998a        e99999t9amuhl; mar6np cl106" eci99999l  <
+     Cter-6" eci99999l  <sda;disSa.r-6" ecir crafted and f>🕉lmcae&#82feat-iconaontnCING cecir
+feat-tea=thke0l claeK"ource. It  claMtra- e: 17px;
+    flex-shr   backgross=sie7-8.43,4.87-13d: vaoclassbC4
+Sysa-( v cln/span>
+    <h2 class="section-h">More than a songbook</h2>
+    <p class="section-p">Every mantra comes with everything you need — not just the words, bu5>
+    <drB0PONSIVE ---- */
+  le of 5ths</so  <99999999hop/files/Page-6.oyour
+    border-t".oyo3d: vbackgross=sie7-8.r.8-35.22,20.8e than a songbook</h2>
+    <p class="section-p">
+   h2>
+ r999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999n Dass=o60" alt="Mantra S>eat9999999999. bu5>
+ height:   transition: opacity 0.2s;
+  }s="h+)20.8e t    <drB0P99999999999i,1g8s="section-p">Eve
