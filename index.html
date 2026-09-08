@@ -738,39 +738,7 @@
   <p class="hero-sub">Everything you need to play, sing, and understand mantra. For guitar and harmonium. For every level.</p>
   <a href="https://veenamusic.com/products/mantra-songbook-printed?variant=55384158404776" class="hero-btn">Get Your Copy — $69</a>
   <span class="hero-note">Ships from the US in 3–7 days · Free on orders over $100</span>
-  <div class="hero-carousel">
-    <div class="hero-carousel-track" id="heroCarousel">
-      <div class="hero-carousel-slide">
-        <img src="https://veenamusic.com/cdn/shop/files/Milly2-songbook-2.jpg?v=1770068756&width=880" alt="Mantra Songbook with PDF" loading="eager">
-      </div>
-      <div class="hero-carousel-slide">
-        <img src="https://veenamusic.com/cdn/shop/files/Double-book.jpg?v=1775507631&width=880" alt="2 Books Bundle" loading="eager">
-      </div>
-      <div class="hero-carousel-slide">
-        <img src="https://veenamusic.com/cdn/shop/files/Book-_-PDF.jpg?v=1775507631&width=880" alt="Book with PDFs" loading="eager">
-      </div>
-    </div>
-    <div class="hero-carousel-dots">
-      <button class="hero-carousel-dot active" onclick="heroCarouselGo(0)"></button>
-      <button class="hero-carousel-dot" onclick="heroCarouselGo(1)"></button>
-      <button class="hero-carousel-dot" onclick="heroCarouselGo(2)"></button>
-    </div>
-  </div>
-
-  <script>
-    let heroCarouselIndex = 0;
-    function heroCarouselGo(n) {
-      const carousel = document.getElementById('heroCarousel');
-      const dots = document.querySelectorAll('.hero-carousel-dot');
-      heroCarouselIndex = n;
-      carousel.style.transform = `translateX(-${heroCarouselIndex * 100}%)`;
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === heroCarouselIndex));
-    }
-    setInterval(() => {
-      heroCarouselGo((heroCarouselIndex + 1) % 3);
-    }, 4000);
-  </script>
-</section>
+  </section>
 
 
 <!-- STATS BAR -->
