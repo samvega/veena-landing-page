@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0735/3054/0200/files/faviucon_gold.png?v=1781543190&width=96">
+<link rel="apple-touch-icon" href="https://cdn.shopify.com/s/files/1/0735/3054/0200/files/faviucon_gold.png?v=1781543190&width=180">
 <title>Medicine Music Songbook | VEENA</title>
 <meta name="description" content="100 medicine songs with simple chords and lyrics, a QR code to a recording of every song, and the PDF included.">
 <meta property="og:title" content="Medicine Music Songbook | VEENA">
@@ -780,6 +782,40 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
   .header-cta, .hero-btn, .btn-gold, .best-badge, .discount-badge { color: var(--dark2) !important; }
   .final-section h2 { color: var(--dark2) !important; }
   .final-section p { color: rgba(15,20,30,0.78) !important; }
+
+  /* Round 3: cards, icons, zoom */
+  .pricing-card { display: flex; flex-direction: column; align-items: center; }
+  .pricing-card .btn-gold, .pricing-card .btn-outline { align-self: stretch; margin-top: auto; }
+  .pricing-card .pricing-desc { margin-bottom: 18px; }
+  .card-media { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1 / 1; margin: 0 auto 18px; border-radius: 6px; overflow: hidden; background: #E8E3D9; }
+  .card-media img { position: absolute; inset: 0; width: 100% !important; max-width: none !important; height: 100%; object-fit: cover; margin: 0 !important; border-radius: 0 !important; transition: opacity .45s ease; }
+  .card-media .cm-b { opacity: 0; }
+  @media (hover: hover) { .card-media:hover .cm-b { opacity: 1; } }
+  .card-media.is-alt .cm-b { opacity: 1; }
+  .discount-badge { background: var(--gold) !important; border: 0 !important; color: var(--dark2) !important; font-weight: 600; letter-spacing: .06em; }
+  .pricing-original { color: rgba(239,231,216,0.55) !important; }
+  .feat-icon { width: 44px !important; height: 44px !important; background: rgba(201,161,90,0.12) !important; border: 1px solid rgba(169,124,53,0.45); color: #A07330; }
+  .feat-icon svg { width: 22px; height: 22px; display: block; }
+  .feat-text { padding-top: 11px !important; }
+  .made-well { display: flex; gap: 14px; align-items: center; justify-content: center; max-width: 620px; margin: 26px auto 0; padding: 16px 20px; border: 1px solid rgba(201,161,90,0.35); border-radius: 8px; color: rgba(239,231,216,0.85); font-size: 14px; line-height: 1.55; text-align: left; }
+  .made-well svg { width: 26px; height: 26px; flex-shrink: 0; color: var(--gold); }
+  .zoomable { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .zoom-badge { position: absolute; right: 16px; bottom: 16px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px; background: rgba(15,20,30,0.82); color: #EFE7D8; font: 500 13px var(--sans); opacity: .9; transition: opacity .25s, transform .25s; pointer-events: none; }
+  .zoom-badge svg { width: 16px; height: 16px; }
+  @media (hover: hover) { .zoomable .zoom-badge { opacity: 0; transform: translateY(4px); } .zoomable:hover .zoom-badge { opacity: 1; transform: none; } }
+  .lb { position: fixed; inset: 0; z-index: 1000; background: rgba(10,13,20,0.96); display: none; }
+  .lb.open { display: block; }
+  .lb-scroll { position: absolute; inset: 0; overflow: auto; -webkit-overflow-scrolling: touch; display: flex; }
+  .lb-scroll img { margin: auto; max-width: 96vw; max-height: 92vh; width: auto; height: auto; cursor: zoom-in; display: block; }
+  .lb.zoomed .lb-scroll img { max-width: none; max-height: none; width: 2400px; cursor: zoom-out; }
+  .lb-close { position: absolute; top: 14px; right: 14px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(239,231,216,0.3); background: rgba(15,20,30,0.8); color: #EFE7D8; font-size: 24px; line-height: 1; cursor: pointer; }
+  .lb-tip { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; padding: 8px 14px; border-radius: 999px; background: rgba(15,20,30,0.8); color: rgba(239,231,216,0.8); font: 13px var(--sans); pointer-events: none; }
+  @media (max-width: 700px) {
+    .card-media { max-width: 100%; }
+    .pricing-card { padding: 20px 18px !important; }
+    .hero img.hero-cover, .hero-cover { width: 100% !important; max-width: 440px !important; }
+    .lb.zoomed .lb-scroll img { width: 1800px; }
+  }
 </style>
 </head>
 <body>
@@ -797,7 +833,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
   <span class="xmas-strip">🎁 Order by 12 December for Christmas delivery in the US</span><br>
   <span class="hero-eyebrow">New · Medicine Music Songbook</span>
   <h1>100 medicine songs with simple chords, <em>all in one book</em></h1>
-  <p class="hero-sub">The songs you hear in ceremony and singing circles, in English, Spanish, Portuguese and Indigenous languages. <strong><span style="color: #c4903a;">Made for guitar.</span></strong> A QR code on every song takes you to the recording.</p>
+  <p class="hero-sub">The songs you hear in ceremony and singing circles, in English, Spanish, Portuguese and Indigenous languages. <strong><span style="color: var(--gold);">Made for guitar.</span></strong> A QR code on every song takes you to the recording.</p>
   <a href="#pricing" class="hero-btn">Pre-order Your Copy</a>
   <span class="hero-note">Ships from 7 December · PDF included · Free US shipping over $100</span>
   <img class="hero-cover" src="/img/medicine-cover.jpg" alt="The Medicine Music Songbook, printed" style="height: auto; margin-top: 30px; border-radius: 6px;">
@@ -836,7 +872,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
     <div class="pricing-grid two">
 
       <div class="pricing-card">
-        <img src="/img/medicine-card.jpg" alt="Medicine Music Songbook, printed" loading="lazy">
+        <div class="card-media"><img class="cm-a" src="/img/medicine-cover.jpg" alt="Medicine Music Songbook, printed" loading="lazy"><img class="cm-b" src="/img/medicine-card.jpg" alt="" aria-hidden="true" loading="lazy"></div>
         <div class="discount-badge">PRE-ORDER</div>
         <p class="pricing-name">Medicine Music Songbook</p>
         <p class="pricing-price">$74</p>
@@ -846,7 +882,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 
       <div class="pricing-card best">
         <span class="best-badge">Best value</span>
-        <img src="/img/bundle-card.jpg" alt="Mantra Songbook and Medicine Music Songbook together" loading="lazy">
+        <div class="card-media"><img class="cm-a" src="/img/bundle-card.jpg" alt="The Mantra and Medicine Music Songbooks together" loading="lazy"><img class="cm-b" src="/img/bundle-full.jpg" alt="" aria-hidden="true" loading="lazy"></div>
         <div class="discount-badge">SAVE $30</div>
         <p class="pricing-name">Mantra + Medicine Bundle</p>
         <p class="pricing-price">$124 <span class="pricing-original">$154</span></p>
@@ -858,6 +894,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 
     <p class="pricing-footer">Secure checkout · Ships from US &amp; UK warehouses · 14-day returns</p>
     <p class="pricing-xmas">🎁 Order by 12 December for Christmas delivery in the US</p>
+    <p class="made-well"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/><path d="M17.5 12h.01"/></svg><span>Printed in small batches on high quality paper. Full colour throughout and ring bound, so it lies flat on your music stand.</span></p>
   </div>
 </div>
 
@@ -870,35 +907,35 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 
     <div class="features-grid">
       <div class="feat">
-        <div class="feat-icon">🎸</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 10l6-6"/><path d="M18.5 2.5l3 3"/><path d="M12.6 7.9c-1.6-1-4.1-.9-5.5.5-.8.8-1 1.8-.7 2.7-1.6.2-3 1-3.6 2.4-1 2.3.4 4.9 2.7 5.9 2.3 1 4.9.4 5.7-1.6.6-1.4.2-2.9-.6-3.9.9.2 1.9 0 2.6-.7 1.3-1.3 1.2-3.9-.6-5.3z"/><circle cx="9.8" cy="14.2" r="1.3"/></svg></div>
         <span class="feat-text">Chords and lyrics for 100 songs, with the chords for each song shown on the page</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">🎚</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><rect x="8" y="3.5" width="3.5" height="5" rx="1"/><rect x="14" y="9.5" width="3.5" height="5" rx="1"/><rect x="5" y="15.5" width="3.5" height="5" rx="1"/></svg></div>
         <span class="feat-text">Capo options for every song, so you can play in easy shapes</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">📱</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v.01M14 21h.01M17.5 21H21v-3.5"/></svg></div>
         <span class="feat-text">A QR code on every song that takes you to the recording</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">🌎</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3c-2.5 2.6-3.8 5.6-3.8 9s1.3 6.4 3.8 9"/></svg></div>
         <span class="feat-text">Five chapters: English, Spanish, Portuguese, Indigenous and other languages</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">🧰</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5A2.5 2.5 0 0 1 11 3h2a2.5 2.5 0 0 1 2.5 2.5V7M3 12.5h18M10 12.5v2h4v-2"/></svg></div>
         <span class="feat-text">Music toolkit: chord library, strumming and fingerpicking patterns, keys and the circle of fifths</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">📲</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/><path d="M10.5 8l4 2.5-4 2.5z"/></svg></div>
         <span class="feat-text">The free Veena app, with every song, a tuner and play along</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">🎶</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg></div>
         <span class="feat-text">Spotify and YouTube playlists of the whole book</span>
       </div>
       <div class="feat">
-        <div class="feat-icon">💛</div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg></div>
         <span class="feat-text">10% of the proceeds go to VAMOS!, a charity teaching music to kids in Mexico</span>
       </div>
     </div>
@@ -942,10 +979,10 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
     <span class="eyebrow">Inside the book</span>
     <h2 class="gallery-head">Take a look inside</h2>
     <figure class="inside-fig">
-      <picture>
+      <button class="zoomable" type="button" data-zoom="/img/medicine-inside-zoom.jpg" aria-label="Open a larger view"><picture>
         <source media="(max-width: 700px)" srcset="/img/medicine-inside-tall.jpg">
         <img src="/img/medicine-inside-wide.jpg" alt="Pages from inside the medicine" loading="lazy" width="2400" height="1800">
-      </picture>
+      </picture><span class="zoom-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>Take a closer look</span></button>
     </figure>
   </div>
 </div>
@@ -986,5 +1023,38 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 }());
 </script>
 
+
+<script>
+(function () {
+  // Cards: hover swaps to the mockup; on touch screens they alternate on their own and on tap.
+  var hover = window.matchMedia('(hover: hover)').matches;
+  document.querySelectorAll('.card-media').forEach(function (m, i) {
+    m.addEventListener('click', function () { m.classList.toggle('is-alt'); });
+    if (!hover) setTimeout(function () { setInterval(function () { m.classList.toggle('is-alt'); }, 3200); }, i * 600);
+  });
+  // Inside the book: tap to open, tap again to zoom in.
+  var lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.innerHTML = '<button class="lb-close" aria-label="Close">&times;</button><div class="lb-scroll"><img alt=""></div><span class="lb-tip">Tap the image to zoom</span>';
+  document.body.appendChild(lb);
+  var img = lb.querySelector('img'), sc = lb.querySelector('.lb-scroll'), tip = lb.querySelector('.lb-tip');
+  function close() { lb.classList.remove('open', 'zoomed'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.zoomable').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.getAttribute('data-zoom'); img.alt = b.querySelector('img').alt;
+      lb.classList.add('open'); document.body.style.overflow = 'hidden'; tip.textContent = 'Tap the image to zoom';
+    });
+  });
+  img.addEventListener('click', function (e) {
+    var r = img.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+    var z = lb.classList.toggle('zoomed');
+    tip.textContent = z ? 'Drag or scroll to look around. Tap to zoom out' : 'Tap the image to zoom';
+    if (z) requestAnimationFrame(function () { sc.scrollLeft = fx * img.offsetWidth - sc.clientWidth / 2; sc.scrollTop = fy * img.offsetHeight - sc.clientHeight / 2; });
+  });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target === sc) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+}());
+</script>
 </body>
 </html>
