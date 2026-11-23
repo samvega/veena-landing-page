@@ -10,24 +10,24 @@
 <meta property="og:image" content="https://lp.veenamusic.com/img/medicine-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --dark: #0e0c0b;
-    --dark2: #1c1917;
-    --cream: #f5f0e8;
-    --cream-light: #faf8f5;
-    --gold: #c4903a;
-    --gold-hover: #b07f30;
-    --gold-bg: rgba(196,144,58,0.1);
-    --white: #fff;
-    --text-dark: #1a1714;
-    --text-muted: #6b6560;
-    --border: #e4ddd5;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
+    --dark: #151B27;
+    --dark2: #0F141E;
+    --cream: #EFE7D8;
+    --cream-light: #ECE3D4;
+    --gold: #C9A15A;
+    --gold-hover: #D8B677;
+    --gold-bg: rgba(201,161,90,0.12);
+    --white: #F4EDE1;
+    --text-dark: #1B2230;
+    --text-muted: #5B6170;
+    --border: #DCD2C1;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Karla', -apple-system, sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -46,7 +46,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(14,12,11,0.96);
+    background: rgba(15,20,30,0.96);
     backdrop-filter: blur(10px);
     padding: 14px 28px;
     display: flex;
@@ -95,7 +95,7 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(196,144,58,0.1) 0%, transparent 65%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,161,90,0.1) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -127,7 +127,7 @@
   .hero-sub {
     font-size: 17px;
     font-weight: 300;
-    color: rgba(245,240,232,0.65);
+    color: rgba(239,231,216,0.65);
     max-width: 520px;
     margin: 0 auto 38px;
     line-height: 1.75;
@@ -151,7 +151,7 @@
   .hero-note {
     display: block;
     font-size: 12px;
-    color: rgba(245,240,232,0.35);
+    color: rgba(239,231,216,0.35);
     margin-bottom: 52px;
   }
 
@@ -189,7 +189,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(245,240,232,0.3);
+    background: rgba(239,231,216,0.3);
     cursor: pointer;
     transition: background 0.3s;
     border: none;
@@ -252,7 +252,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(245,240,232,0.4);
+    color: rgba(239,231,216,0.4);
     margin-top: 5px;
   }
 
@@ -412,8 +412,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(14,12,11,0.72);
-    color: rgba(245,240,232,0.9);
+    background: rgba(15,20,30,0.72);
+    color: rgba(239,231,216,0.9);
     border: 1px solid rgba(255,255,255,0.15);
     width: 44px;
     height: 44px;
@@ -428,7 +428,7 @@
     z-index: 2;
     padding: 0;
   }
-  .carousel-btn:hover { background: rgba(196,144,58,0.85); border-color: var(--gold); }
+  .carousel-btn:hover { background: rgba(201,161,90,0.85); border-color: var(--gold); }
 
   .carousel-prev { left: -22px; }
   .carousel-next { right: -22px; }
@@ -500,7 +500,7 @@
 
   .pricing-card.best {
     border-color: var(--gold);
-    background: rgba(196,144,58,0.07);
+    background: rgba(201,161,90,0.07);
   }
 
   .best-badge {
@@ -521,7 +521,7 @@
 
   .discount-badge {
     display: inline-block;
-    background: rgba(196,144,58,0.2);
+    background: rgba(201,161,90,0.2);
     border: 1px solid var(--gold);
     color: var(--gold);
     font-size: 11px;
@@ -534,7 +534,7 @@
 
   .pricing-original {
     font-size: 13px;
-    color: rgba(245,240,232,0.4);
+    color: rgba(239,231,216,0.4);
     text-decoration: line-through;
     margin-left: 6px;
   }
@@ -565,7 +565,7 @@
 
   .pricing-desc {
     font-size: 13px;
-    color: rgba(245,240,232,0.45);
+    color: rgba(239,231,216,0.45);
     margin-bottom: 22px;
     line-height: 1.65;
   }
@@ -587,7 +587,7 @@
   .btn-outline {
     display: block;
     background: transparent;
-    color: rgba(245,240,232,0.75);
+    color: rgba(239,231,216,0.75);
     font-family: var(--sans);
     font-size: 14px;
     font-weight: 500;
@@ -604,7 +604,7 @@
 
   .pricing-footer {
     font-size: 12px;
-    color: rgba(245,240,232,0.3);
+    color: rgba(239,231,216,0.3);
     margin-top: 24px;
   }
 
@@ -709,13 +709,13 @@
 
   .site-footer p {
     font-size: 13px;
-    color: rgba(245,240,232,0.3);
+    color: rgba(239,231,216,0.3);
     margin-bottom: 10px;
   }
 
   .footer-links a {
     font-size: 13px;
-    color: rgba(245,240,232,0.45);
+    color: rgba(239,231,216,0.45);
     text-decoration: none;
     margin: 0 12px;
     transition: color 0.2s;
@@ -752,9 +752,9 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 
 <style>
   /* Christmas 2026 additions */
-  .xmas-strip { display: inline-block; font-size: 13px; color: var(--cream); background: rgba(196,144,58,0.14); border: 1px solid rgba(196,144,58,0.45); padding: 7px 16px; border-radius: 100px; margin-bottom: 26px; line-height: 1.4; }
+  .xmas-strip { display: inline-block; font-size: 13px; color: var(--cream); background: rgba(201,161,90,0.14); border: 1px solid rgba(201,161,90,0.45); padding: 7px 16px; border-radius: 100px; margin-bottom: 26px; line-height: 1.4; }
   .pricing-grid.two { max-width: 640px; margin-left: auto; margin-right: auto; }
-  .pricing-xmas { font-size: 13px; color: rgba(245,240,232,0.6); margin-top: 8px; }
+  .pricing-xmas { font-size: 13px; color: rgba(239,231,216,0.6); margin-top: 8px; }
   .hero img.hero-cover { max-width: 380px; }
   .gift-wrap { background: var(--cream); }
   .gift-inner { max-width: 700px; margin: 0 auto; padding: 80px 28px; text-align: center; }
@@ -766,6 +766,20 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
   .inside-col ul { list-style: none; }
   .inside-col li { padding: 9px 0; border-top: 1px solid var(--border); font-size: 15px; line-height: 1.5; }
   @media (max-width: 600px) { .gift-inner { padding: 60px 16px; } .hero img.hero-cover { width: 80%; } .pricing-grid:not(.two) .pricing-card.best { order: -1; } }
+
+  /* Inside the book graphics */
+  .gallery-section { background: #E8E3D9; padding: 90px 28px; }
+  .inside-wrap { max-width: 1180px; margin: 0 auto; }
+  .gallery-section .gallery-head { color: var(--text-dark); text-align: left; margin-bottom: 32px; font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
+  .inside-fig { margin: 0 0 40px; }
+  .inside-fig:last-child { margin-bottom: 0; }
+  .inside-fig img { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .inside-cap { font-family: var(--serif); font-size: 24px; color: var(--text-dark); margin-bottom: 14px; }
+  @media (max-width: 700px) { .gallery-section { padding: 64px 16px; } }
+  /* Matching veenamusic.com: dark text on gold buttons */
+  .header-cta, .hero-btn, .btn-gold, .best-badge, .discount-badge { color: var(--dark2) !important; }
+  .final-section h2 { color: var(--dark2) !important; }
+  .final-section p { color: rgba(15,20,30,0.78) !important; }
 </style>
 </head>
 <body>
@@ -786,7 +800,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
   <p class="hero-sub">The songs you hear in ceremony and singing circles, in English, Spanish, Portuguese and Indigenous languages. <strong><span style="color: #c4903a;">Made for guitar.</span></strong> A QR code on every song takes you to the recording.</p>
   <a href="#pricing" class="hero-btn">Pre-order Your Copy</a>
   <span class="hero-note">Ships from 7 December · PDF included · Free US shipping over $100</span>
-  <img class="hero-cover" src="/img/medicine-cover.jpg" alt="The Medicine Music Songbook, Songbook No.3 by Joshua Barnes" style="height: auto; margin-top: 30px; border-radius: 6px;">
+  <img class="hero-cover" src="/img/medicine-cover.jpg" alt="The Medicine Music Songbook, printed" style="height: auto; margin-top: 30px; border-radius: 6px;">
 </section>
 
 <!-- STATS BAR -->
@@ -836,7 +850,7 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
         <div class="discount-badge">SAVE $30</div>
         <p class="pricing-name">Mantra + Medicine Bundle</p>
         <p class="pricing-price">$124 <span class="pricing-original">$154</span></p>
-        <p class="pricing-desc">Add the Mantra Songbook. Both books, both PDFs, my first songbook free and free shipping. Ships from 7 December.</p>
+        <p class="pricing-desc">Add the Mantra Songbook. Both books, both PDFs and free shipping. Ships from 7 December.</p>
         <a href="https://veenamusic.com/cart/67989272068264:1" class="btn-gold" data-buy="Mantra + Medicine Songbook Bundle" data-value="124">Get the Bundle</a>
       </div>
 
@@ -922,25 +936,17 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
 
 
 
-<!-- GALLERY -->
+<!-- INSIDE THE BOOK -->
 <div class="gallery-section">
-  <h2 class="gallery-head">Take a look inside</h2>
-
-  <div class="carousel-outer">
-    <div class="carousel-viewport">
-      <div class="carousel-track" id="carouselTrack">
-        <img class="carousel-img" src="/img/medicine-english.jpg" alt="Medicine Music Songbook, English chapter" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-tonguere.jpg" alt="Medicine Music Songbook, song page for Tonguere" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-contents.jpg" alt="Medicine Music Songbook contents" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-spanish.jpg" alt="Medicine Music Songbook, Spanish chapter" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-strumming.jpg" alt="Medicine Music Songbook, strumming patterns" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-chords.jpg" alt="Medicine Music Songbook, chord library" loading="lazy">
-        <img class="carousel-img" src="/img/medicine-app.jpg" alt="Medicine Music Songbook, the Veena app page" loading="lazy">
-      </div>
-    </div>
-    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous image">&#8249;</button>
-    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next image">&#8250;</button>
-    <div class="carousel-dots" id="carouselDots"></div>
+  <div class="inside-wrap">
+    <span class="eyebrow">Inside the book</span>
+    <h2 class="gallery-head">Take a look inside</h2>
+    <figure class="inside-fig">
+      <picture>
+        <source media="(max-width: 700px)" srcset="/img/medicine-inside-tall.jpg">
+        <img src="/img/medicine-inside-wide.jpg" alt="Pages from inside the medicine" loading="lazy" width="2400" height="1800">
+      </picture>
+    </figure>
   </div>
 </div>
 
@@ -963,40 +969,6 @@ fbq('track','ViewContent',{content_name:'Medicine Music Songbook',content_type:'
   </div>
 </footer>
 
-<script>
-(function () {
-  var track = document.getElementById('carouselTrack');
-  var dotsEl = document.getElementById('carouselDots');
-  var slides = track.querySelectorAll('.carousel-img');
-  var current = 0;
-
-  slides.forEach(function (_, i) {
-    var d = document.createElement('button');
-    d.className = 'c-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Go to image ' + (i + 1));
-    d.addEventListener('click', function () { go(i); });
-    dotsEl.appendChild(d);
-  });
-
-  function go(n) {
-    current = ((n % slides.length) + slides.length) % slides.length;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-    dotsEl.querySelectorAll('.c-dot').forEach(function (d, i) {
-      d.className = 'c-dot' + (i === current ? ' active' : '');
-    });
-  }
-
-  document.getElementById('carouselPrev').addEventListener('click', function () { go(current - 1); });
-  document.getElementById('carouselNext').addEventListener('click', function () { go(current + 1); });
-
-  var touchStartX = 0;
-  track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', function (e) {
-    var diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) go(current + (diff > 0 ? 1 : -1));
-  }, { passive: true });
-}());
-</script>
 
 <script>
 (function () {
